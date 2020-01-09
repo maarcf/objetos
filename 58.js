@@ -72,14 +72,118 @@ user.tecnologiasConocidas = ["HTML", "CSS", "JAVASCRIPT", "SASS"]
 console.log(user)
 
 //Ejercicio 6
-const mostrarTecnologias = (sabeProgramar, tecnologiasConocidas) => {
-    if (sabeProgramar === true) {
-        console.log(`Hola, mi nombre es ${user.firstName} y programo en ${tecnologiasConocidas}`)
+/*const mostrarTecnologias = usuario => {
+    if (usuario.sabeProgramar) {
+        console.log(`Hola, mi nombre es ${usuario.firstName} y programo en ${usuario.tecnologiasConocidas}`)
     }
 }
-console.log(mostrarTecnologias())
+mostrarTecnologias (user)*/
 
-//Ejercicio 6
-//const mostrarTecnologias = (sabeProgramar, tecnologiasConocidas) => sabeProgramar === true && console.log(`Hola, mi nombre es ${user.firstName} y programo en ${tecnologiasConocidas}`)
- 
-//console.log(mostrarTecnologias())
+const mostrarTecnologias = usuario => usuario.sabeProgramar && console.log(`Hola, mi nombre es ${usuario.firstName} y programo en ${usuario.tecnologiasConocidas}`)
+mostrarTecnologias (user)
+
+//Ejercicio 7
+user.tecnologiasConocidas.push("Próximamente DOM")
+console.log(user)
+
+//Ejercicio 8
+const newUser = {
+    name: {
+        first: user.firstName,
+        last: user.lastName
+    },
+    email: user.email,
+    age: user.age,
+    sabeProgramar: user.sabeProgramar,
+    tecnologiasConocidas: user.tecnologiasConocidas,
+  
+}
+console.log(newUser)
+
+//Ejercicio 9
+const ganadoras = [
+  {
+    nombre: 'Bebe Zahara Benet',
+    temporada: '1',
+    foto: 'http://www.nokeynoshade.party/images/bebe-zahara-benet.jpg'
+  },
+  {
+    nombre: 'Tyra Sanchez',
+    temporada: '2',
+    foto: 'http://www.nokeynoshade.party/images/tyra-sanchez.jpg'
+  },
+  { nombre: 'Raja',
+    temporada: '3',
+    foto: 'http://www.nokeynoshade.party/images/raja.jpg'
+  },
+  {
+    nombre: 'Sharon Needles',
+    temporada: '4',
+    foto: 'http://www.nokeynoshade.party/images/sharon-needles.jpg'
+  },
+  {
+    nombre: 'Jinkx Monsoon',
+    temporada: '5',
+    foto: 'http://www.nokeynoshade.party/images/jinkx-monsoon.jpg'
+  },
+  {
+    nombre: 'Bianca Del Rio',
+    temporada: '6',
+    foto: 'http://www.nokeynoshade.party/images/bianca-del-rio.jpg'
+  }
+];
+
+const mostrarGanadoras = objetoGanador => {
+    for (let i = 0; i < objetoGanador.length; i++) {
+        console.log(`${objetoGanador[i].nombre} ganó la temporada ${objetoGanador[i].temporada}`) 
+    }
+}
+mostrarGanadoras(ganadoras)
+
+//Ejercicio 10
+const nevermind = [
+  { id: 1, nombre: "Smells Like Teen Spirit", duracion: 302 },
+  { id: 2, nombre: "In Bloom", duracion: 255 },
+  { id: 3, nombre: "Come As You Are", duracion: 219 },
+  { id: 4, nombre: "Breed", duracion: 184 },
+  { id: 5, nombre: "Lithium", duracion: 257 }
+];
+
+const calcularDuracionTotal = cancionesDisco => {
+    let acc = 0;
+    for (let i = 0; i < cancionesDisco.length; i++) {
+        acc = acc + cancionesDisco[i].duracion
+        
+    }
+   return acc
+}
+
+console.log(`La duración total del disco es de ${calcularDuracionTotal(nevermind)} segundos`)
+
+const calcularPromedioPorCancion = promedio => {
+    let tiempopromedio = calcularDuracionTotal(promedio) / promedio.length
+    return tiempopromedio
+}
+console.log(`La duración promedio por canción es de ${calcularPromedioPorCancion(nevermind)} segundos.`)
+
+
+//Ejercicio 11
+/*Tenemos un array de objetos, que representa un listado de bandas
+Cada objeto representa una banda, y tiene las propidades id, nombre, fundacion, activa
+Crear una funcion que muestre en consola cada banda del array, con la siguiente lógica:
+Si la banda está activa mostrar el mensaje: "[NOMBRE DE LA BANDA] está activa desde el año [AÑO DE FUNDACIÓN]"
+Si la banda NO está activa mostrar el mensaje: "[NOMBRE DE LA BANDA] no está activa"
+const bandas = [
+  { id: 1, nombre: "Nirvana", fundacion: 1987, activa: false },
+  { id: 2, nombre: "Foo Fighters", fundacion: 1994, activa: true },
+  { id: 3, nombre: "Led Zeppelin", fundacion: 1967, activa: false },
+  { id: 3, nombre: "Queens of the Stone Age", fundacion: 1997, activa: true },
+  { id: 3, nombre: "Pearl Jam", fundacion: 1990, activa: true },
+];
+
+///// RESULTADO
+// Nirvana no está activa
+// Foo Fighters está activa desde el año 1994
+// Led Zeppelin no está activa
+// Queens of the Stone Age está activa desde el año 1997
+// Pearl Jam está activa desde el año 1990*/
